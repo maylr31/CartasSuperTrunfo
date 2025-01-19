@@ -1,15 +1,49 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
-
 int main() {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
+    char codigo[4]; // Código da carta (ex: A01)
+    int populacao;  // População da cidade
+    float area;     // Área da cidade
+    double pib;     // PIB da cidade
+    int pontosTuristicos; // Número de pontos turísticos
+    char continuar = 's'; // Controle para cadastrar outra carta
 
-  // Área para entrada de dados
+    printf("Bem-vindo ao Desafio Super Trunfo - Países!\n");
+    printf("Cadastro de cartas com informações das cidades.\n");
 
-  // Área para exibição dos dados da cidade
+    do {
+        // Solicitar o código da carta ao usuário
+        printf("\nDigite o código da carta (exemplo: A01): ");
+        scanf("%s", codigo);
 
-return 0;
-} 
+        // Entrada de dados
+        printf("Digite a população da cidade: ");
+        scanf("%d", &populacao);
+
+        printf("Digite a área da cidade (em km²): ");
+        scanf("%f", &area);
+
+        printf("Digite o PIB da cidade (em bilhões): ");
+        scanf("%lf", &pib);
+
+        printf("Digite o número de pontos turísticos: ");
+        scanf("%d", &pontosTuristicos);
+
+        // Exibição das informações cadastradas
+        printf("\n--- Carta cadastrada: %s ---\n", codigo);
+        printf("População: %d habitantes\n", populacao);
+        printf("Área: %.2f km²\n", area);
+        printf("PIB: %.2f bilhões\n", pib);
+        printf("Pontos turísticos: %d\n", pontosTuristicos);
+
+        // Perguntar se deseja cadastrar outra carta
+        printf("\nDeseja cadastrar outra carta? (s/n): ");
+        scanf(" %c", &continuar);
+
+    } while (continuar == 's' || continuar == 'S');
+
+    printf("\nCadastro concluído! Obrigado por usar o sistema.\n");
+
+    return 0;
+}
+
