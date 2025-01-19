@@ -41,6 +41,7 @@ int main() {
         scanf(" %c", &continuar);
 
     } while (continuar == 's' || continuar == 'S');
+    
 
     printf("\nCadastro concluído! Obrigado por usar o sistema.\n");
 
